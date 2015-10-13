@@ -28,21 +28,70 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.comboBoxExits = new System.Windows.Forms.ComboBox();
+            this.buttonGoHere = new System.Windows.Forms.Button();
+            this.buttonGoThoughTheDoor = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(13, 13);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(441, 21);
+            this.textBox1.TabIndex = 0;
+            // 
+            // comboBoxExits
+            // 
+            this.comboBoxExits.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxExits.FormattingEnabled = true;
+            this.comboBoxExits.Location = new System.Drawing.Point(176, 435);
+            this.comboBoxExits.Name = "comboBoxExits";
+            this.comboBoxExits.Size = new System.Drawing.Size(278, 20);
+            this.comboBoxExits.TabIndex = 1;
+            // 
+            // buttonGoHere
+            // 
+            this.buttonGoHere.Location = new System.Drawing.Point(13, 435);
+            this.buttonGoHere.Name = "buttonGoHere";
+            this.buttonGoHere.Size = new System.Drawing.Size(157, 23);
+            this.buttonGoHere.TabIndex = 2;
+            this.buttonGoHere.Text = "Go Here:";
+            this.buttonGoHere.UseVisualStyleBackColor = true;
+            this.buttonGoHere.Click += new System.EventHandler(this.buttonGoHere_Click);
+            // 
+            // buttonGoThoughTheDoor
+            // 
+            this.buttonGoThoughTheDoor.Location = new System.Drawing.Point(13, 462);
+            this.buttonGoThoughTheDoor.Name = "buttonGoThoughTheDoor";
+            this.buttonGoThoughTheDoor.Size = new System.Drawing.Size(441, 23);
+            this.buttonGoThoughTheDoor.TabIndex = 3;
+            this.buttonGoThoughTheDoor.Text = "Go Though The Door";
+            this.buttonGoThoughTheDoor.UseVisualStyleBackColor = true;
+            this.buttonGoThoughTheDoor.Click += new System.EventHandler(this.buttonGoThoughTheDoor_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 262);
+            this.ClientSize = new System.Drawing.Size(466, 497);
+            this.Controls.Add(this.buttonGoThoughTheDoor);
+            this.Controls.Add(this.buttonGoHere);
+            this.Controls.Add(this.comboBoxExits);
+            this.Controls.Add(this.textBox1);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox comboBoxExits;
+        private System.Windows.Forms.Button buttonGoHere;
+        private System.Windows.Forms.Button buttonGoThoughTheDoor;
     }
 }
 

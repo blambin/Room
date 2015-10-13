@@ -62,7 +62,7 @@ namespace Room
     class Outside:Location
     {
         private bool hot;
-        bool Hot
+        public bool Hot
         {
             get { return hot; }
         }
@@ -85,11 +85,52 @@ namespace Room
 
     class OutsideWithDoor : Outside,IHasExteriorDoor
     {
-        
+        public OutsideWithDoor(string name,bool hot,string doorDescription):base(name,hot)
+        {
+            this.doorDescription = doorDescription;
+        }
+
+        private string doorDescription;
+        public string DoorDescription
+        {
+            get { return doorDescription; }
+        }
+
+        private Location doorLocation;
+        public Location DoorLocation
+        {
+            get { return doorLocation; }
+            set { doorLocation = value; }
+        }
+
+        public override string Description
+        {
+            get
+            {
+                return base.Description + " You see " + doorDescription + ".";
+            }
+        }
     }
 
     class RoomWithDoor : Room,IHasExteriorDoor
     {
         
+        public RoomWithDoor(string name, string decoration,string doordescription): base(name,decoration)
+        {
+            this.doordescription = doordescription;
+        }
+
+        private string doordescription;
+        public string DoorDescription
+        {
+            get { return doordescription; }
+        }
+
+        private Location doorLocation;
+        public Location DoorLocation
+        {
+            get { return doorLocation; }
+            set { doorLocation = value; }
+        }
     }
 }

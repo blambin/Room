@@ -17,7 +17,37 @@ namespace Room
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        
+
+        public void CreateObjects()
+        {
+            
+        }
+
+        private void MoveTOANewLocation(Location location)
+        {
+            Location currentLocation;
+            currentLocation = location;
+            comboBoxExits.Items.Clear();
+            comboBoxExits.Items.Add(currentLocation.Exits);
+            comboBoxExits.SelectedIndex = 0;
+
+            textBox1.Text = currentLocation.Description;
+
+            if (currentLocation is IHasExteriorDoor)
+                buttonGoThoughTheDoor.Visible = true;
+            buttonGoThoughTheDoor.Visible = false;
+
+
+
+        }
+
+        private void buttonGoHere_Click(object sender, EventArgs e)
+        {
+            MoveTOANewLocation(comboBoxExits.SelectedIndex);
+        }
+
+        private void buttonGoThoughTheDoor_Click(object sender, EventArgs e)
         {
 
         }

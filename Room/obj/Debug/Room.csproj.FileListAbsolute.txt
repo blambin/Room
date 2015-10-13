@@ -3,3 +3,7 @@ d:\我的文档\visual studio 2013\Projects\Room\Room\obj\Debug\Room.csprojResol
 d:\我的文档\visual studio 2013\Projects\Room\Room\obj\Debug\Room.Form1.resources
 d:\我的文档\visual studio 2013\Projects\Room\Room\obj\Debug\Room.Properties.Resources.resources
 d:\我的文档\visual studio 2013\Projects\Room\Room\obj\Debug\Room.csproj.GenerateResource.Cache
+d:\我的文档\visual studio 2013\Projects\Room\Room\bin\Debug\Room.exe
+d:\我的文档\visual studio 2013\Projects\Room\Room\bin\Debug\Room.pdb
+d:\我的文档\visual studio 2013\Projects\Room\Room\obj\Debug\Room.exe
+d:\我的文档\visual studio 2013\Projects\Room\Room\obj\Debug\Room.pdb

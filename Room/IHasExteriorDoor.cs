@@ -8,7 +8,14 @@ namespace Room
 {
     interface IHasExteriorDoor
     {
-        string DoorDescription;
-        Location DoorLocation;
+        string DoorDescription
+        {
+            get;
+        }
+        Location DoorLocation
+        {
+            get;
+            set;
+        }
     }
 }
