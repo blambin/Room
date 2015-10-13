@@ -27,6 +27,7 @@ namespace Room
             InitializeComponent();
             CreateObjects();
             MoveTOANewLocation(livingRoom);
+            textBox1.Multiline = true ;
         }
 
         
