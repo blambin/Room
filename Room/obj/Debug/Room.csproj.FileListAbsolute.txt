@@ -1,0 +1,5 @@
+d:\我的文档\visual studio 2013\Projects\Room\Room\bin\Debug\Room.exe.config
+d:\我的文档\visual studio 2013\Projects\Room\Room\obj\Debug\Room.csprojResolveAssemblyReference.cache
+d:\我的文档\visual studio 2013\Projects\Room\Room\obj\Debug\Room.Form1.resources
+d:\我的文档\visual studio 2013\Projects\Room\Room\obj\Debug\Room.Properties.Resources.resources
+d:\我的文档\visual studio 2013\Projects\Room\Room\obj\Debug\Room.csproj.GenerateResource.Cache
