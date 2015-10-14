@@ -133,4 +133,38 @@ namespace Room
             set { doorLocation = value; }
         }
     }
+
+    class RoomWithHidingPlace : Room, IHidingPlace
+    {
+        
+
+    }
+
+    class OutsideWithHiding : Outside,IHidingPlace
+    {
+
+    }
+
+    class Opponent
+    {
+        private Location myLocation;
+        private Random random;
+
+        public Opponent()
+        {
+
+        }
+
+        public void Move()
+        {
+
+        }
+
+        public bool Check(Location location)
+        {
+            return true;
+        }
+
+
+    }
 }
