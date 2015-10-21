@@ -51,6 +51,8 @@ namespace Room
         {
             this.decoration = decoration;
         }
+
+
         public override string Description
         {
             get
@@ -83,9 +85,10 @@ namespace Room
 
 
 
-    class OutsideWithDoor : Outside,IHasExteriorDoor
+    class OutsideWithDoor : Outside ,IHasExteriorDoor
     {
-        public OutsideWithDoor(string name,bool hot,string doorDescription):base(name,hot)
+        public OutsideWithDoor(string name, bool hot, string doorDescription)
+            : base(name, hot)
         {
             this.doorDescription = doorDescription;
         }
@@ -112,10 +115,11 @@ namespace Room
         }
     }
 
-    class RoomWithDoor : Room,IHasExteriorDoor
+    class RoomWithDoor : RoomWithHidingPlace ,IHasExteriorDoor
     {
-        
-        public RoomWithDoor(string name, string decoration,string doordescription): base(name,decoration)
+
+        public RoomWithDoor(string name, string decoration, string doordescription, string hidingPlaceName)
+            : base(name, decoration, hidingPlaceName)
         {
             this.doordescription = doordescription;
         }
@@ -136,13 +140,45 @@ namespace Room
 
     class RoomWithHidingPlace : Room, IHidingPlace
     {
-        
+        public RoomWithHidingPlace(string name,string decoration,string hidingPlaceName):base(name,decoration)
+        {
+            this.hidingPlaceName = hidingPlaceName;
+        }
+
+        private string hidingPlaceName;
+        public string HidingPlaceName
+        {
+            get { return hidingPlaceName; }
+        }
+
+        public override string Description
+        {
+            get
+            {
+                return base.Description + " Someone could hide " + hidingPlaceName + ".";
+            }
+        }
 
     }
 
     class OutsideWithHiding : Outside,IHidingPlace
     {
-
+        public OutsideWithHiding(string name,bool hot,string hidingPlaceName):base(name,hot)
+        {
+            this.hidingPlaceName = hidingPlaceName;
+        }
+        private string hidingPlaceName;
+        public string HidingPlaceName
+        {
+            get { return hidingPlaceName; }
+        }
+        public override string Description
+        {
+            get
+            {
+                return base.Description + " Someone could hide " + hidingPlaceName + ".";
+            }
+        }
     }
 
     class Opponent
@@ -150,21 +186,45 @@ namespace Room
         private Location myLocation;
         private Random random;
 
-        public Opponent()
+        public Opponent(Location startLocation)
         {
-
+            this.myLocation = startLocation;
+            random = new Random();
+  
         }
 
         public void Move()
         {
+            if (myLocation is IHasExteriorDoor)
+            {
+                IHasExteriorDoor LocationWithDoor = myLocation as IHasExteriorDoor;
+                if (random.Next(2)==1)
+                {
+                    myLocation = LocationWithDoor.DoorLocation;
+                }
+            }
 
+            bool hiden = false;
+            while (!hiden)
+            {
+                int rand = random.Next(myLocation.Exits.Length);
+                myLocation = myLocation.Exits[rand];
+                if (myLocation is IHidingPlace)
+                    hiden = true;
+            }
+                
         }
 
         public bool Check(Location location)
         {
-            return true;
+            if (this.myLocation == location)
+                return true;
+            else
+                return false;
         }
 
 
     }
+
+
 }

@@ -8,7 +8,7 @@ namespace Room
 {
     interface IHidingPlace
     {
-        string HidingPlace
+        string HidingPlaceName
         {
             get;
         }
